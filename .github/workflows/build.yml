@@ -45,13 +45,11 @@ jobs:
           echo Version: $LB_VERSION, Minecraft: $MINECRAFT_VERSION
           cd build/libs
           export JAR=$(find . -regex '.*liquidbounce-[0-9|.]*\.jar')
-          cp $JAR zip/liquidbounce.jar
-          cd zip
-          zip -r liquidbounce.zip *
+          cp $JAR catbounce.jar
           
       - name: Upload artifact
         uses: actions/upload-artifact@v2
         with:
           name: Catbounce
-          path: build/libs/liquidbounce.zip
+          path: build/libs/catbounce.zip
           
